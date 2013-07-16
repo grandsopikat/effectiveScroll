@@ -21,6 +21,8 @@ $.fn.effectiveScroll = function( options ) {
 
 		$scrollContent.animate( { scrollTop: "+=" + top }, opt.animateSpeed, function() {
 			window.location.hash = $target.attr("id");
+			if (typeof opt.callBack === "function")
+				opt.callBack();
 		} );
 
 		return false;
